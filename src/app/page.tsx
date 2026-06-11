@@ -138,7 +138,7 @@ useEffect(() => {
           method="POST"
         >
           <input type="hidden" name="_subject" value="Nueva solicitud de cita - Nutrición Efectiva" />
-          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_captcha" value="true" />
           <input
             type="hidden"
             name="_next"
