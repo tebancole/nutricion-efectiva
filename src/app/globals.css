@@ -43,16 +43,12 @@ a {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 900;
-  color: var(--dark-green);
 }
 
 .brand img {
-  width: 92px;
-  height: 54px;
+  width: 200px;
+  height: auto;
   object-fit: contain;
-  border-radius: 0;
 }
 
 .nav {
