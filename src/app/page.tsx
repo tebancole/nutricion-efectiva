@@ -141,7 +141,7 @@ useEffect(() => {
             <h3>Lic. Francella Rojas Castro</h3>
 
             <p className="credentialNumber">
-              Nutricionista colegiada · CPN 2169-16
+              Nutricionista · CPN 2169-16
             </p>
 
             <ul className="credentialsList">
