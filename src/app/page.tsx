@@ -7,12 +7,36 @@ const instagramUrl = "https://www.instagram.com/nutr_icionefectiva/";
 const whatsappUrl = "https://wa.me/50685268640?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20con%20Nutrici%C3%B3n%20Efectiva.";
 
 const services = [
-  "Control de peso",
-  "Nutrición deportiva",
-  "Nutrición clínica",
-  "Educación alimentaria",
-  "Planes familiares",
-  "Sobrepeso y obesidad",
+  {
+    title: "Control de peso",
+    description:
+      "Diseñamos estrategias sostenibles para ayudarte a alcanzar y mantener un peso saludable sin recurrir a restricciones extremas.",
+  },
+  {
+    title: "Nutrición deportiva",
+    description:
+      "Optimiza tu rendimiento, recuperación y composición corporal con una alimentación adaptada a tu disciplina y objetivos deportivos.",
+  },
+  {
+    title: "Nutrición clínica",
+    description:
+      "Planes nutricionales especializados para apoyar el tratamiento y control de diversas condiciones de salud.",
+  },
+  {
+    title: "Educación alimentaria",
+    description:
+      "Aprende a tomar decisiones conscientes sobre tu alimentación y desarrolla hábitos saludables para toda la vida.",
+  },
+  {
+    title: "Planes familiares",
+    description:
+      "Promovemos una alimentación equilibrada para todos los miembros del hogar, adaptándonos a las necesidades de cada familia.",
+  },
+  {
+    title: "Sobrepeso y obesidad",
+    description:
+      "Acompañamiento integral y sin juicios para mejorar tu salud y bienestar mediante cambios progresivos y sostenibles.",
+  },
 ];
 export default function Home() {
 const [mensajeEnviado, setMensajeEnviado] = useState(false);
@@ -81,10 +105,10 @@ useEffect(() => {
         <h2>Planes diseñados para tus metas reales</h2>
         <div className="serviceGrid">
           {services.map((service) => (
-            <article className="card" key={service}>
+            <article className="card" key={service.title}>
               <div className="icon">✓</div>
-              <h3>{service}</h3>
-              <p>Un acompañamiento claro, práctico y personalizado para avanzar sin dietas extremas.</p>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
             </article>
           ))}
         </div>
