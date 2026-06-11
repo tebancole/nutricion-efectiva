@@ -1,0 +1,180 @@
+"use client";
+
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+const instagramUrl = "https://www.instagram.com/nutr_icionefectiva/";
+const whatsappUrl = "https://wa.me/50685268640?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20con%20Nutrici%C3%B3n%20Efectiva.";
+
+const services = [
+  "Control de peso",
+  "Nutrición deportiva",
+  "Nutrición clínica",
+  "Educación alimentaria",
+  "Planes familiares",
+  "Sobrepeso y obesidad",
+];
+export default function Home() {
+const [mensajeEnviado, setMensajeEnviado] = useState(false);
+
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("enviado") === "true") {
+    setMensajeEnviado(true);
+
+    const timer = setTimeout(() => {
+      setMensajeEnviado(false);
+
+      // Limpia la URL para que no reaparezca al refrescar
+      window.history.replaceState({}, "", "/");
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }
+}, []);
+  return (
+    <main>
+      <header className="header">
+        <a className="brand" href="#inicio" aria-label="Nutrición Efectiva inicio">
+          <Image src="/images/logo.jpg" alt="Logo Nutrición Efectiva" width={90} height={72} priority />
+          <span>Nutrición Efectiva</span>
+        </a>
+        <nav className="nav" aria-label="Menú principal">
+          <a href="#servicios">Servicios</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#agenda">Agenda</a>
+          <a href={instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
+        </nav>
+        <a className="button primary" href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
+      </header>
+
+      <section id="inicio" className="hero section">
+        <div className="heroText">
+          <p className="eyebrow">Nutrición personalizada</p>
+          <h1>Nutrición personalizada para una vida saludable.</h1>
+          <p className="lead">
+            Te acompaño a construir hábitos sostenibles, mejorar tu relación con la comida y alcanzar tus objetivos con un plan adaptado a tu estilo de vida.
+          </p>
+          <div className="actions">
+            <a className="button primary" href="#agenda">Agendar cita</a>
+            <a className="button secondary" href="#servicios">Ver servicios</a>
+          </div>
+        </div>
+
+        <div className="heroImage" aria-label="Fotografía profesional de Francella">
+          <span className="float food1">🥑</span>
+          <span className="float food2">🍓</span>
+          <span className="float food3">🍅</span>
+          <span className="float food4">🌿</span>
+          <Image src="/images/francella.jpg" alt="Francella, nutricionista" width={760} height={760} priority />
+        </div>
+      </section>
+
+      <section id="servicios" className="section services">
+        <p className="eyebrow center">Servicios</p>
+        <h2>Planes diseñados para tus metas reales</h2>
+        <div className="serviceGrid">
+          {services.map((service) => (
+            <article className="card" key={service}>
+              <div className="icon">✓</div>
+              <h3>{service}</h3>
+              <p>Un acompañamiento claro, práctico y personalizado para avanzar sin dietas extremas.</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="sobre-mi" className="section about">
+        <div>
+          <p className="eyebrow">Sobre Francella</p>
+          <h2>Una guía cercana para mejorar tu salud desde la alimentación</h2>
+        </div>
+        <p>
+          En Nutrición Efectiva, cada plan se adapta a tu rutina, gustos y necesidades. La meta es que logres cambios sostenibles, disfrutes el proceso y tengas herramientas para cuidar tu salud a largo plazo.
+        </p>
+      </section>
+
+      <section id="agenda" className="section booking">
+        
+        <div>
+          
+          <p className="eyebrow light">Agenda tu consulta</p>
+          <h2>Da el primer paso hacia una vida más saludable</h2>
+          <p>Escríbenos por WhatsApp, Instagram o completa el formulario y te contactaremos para coordinar tu cita.</p>
+        </div>
+        <form
+          className="form"
+          action="https://formsubmit.co/nutricionefectiva2169@gmail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Nueva solicitud de cita - Nutrición Efectiva" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="http://localhost:3000/?enviado=true"
+          />
+
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre completo"
+            required
+            minLength={3}
+          />
+
+          <input
+            type="email"
+            name="correo"
+            placeholder="Correo electrónico"
+            required
+          />
+
+          <input
+            type="tel"
+            name="telefono"
+            placeholder="Teléfono"
+            required
+            pattern="[0-9]{8}"
+            title="Ingresa un número de teléfono válido de 8 dígitos."
+          />
+
+          <textarea
+            name="mensaje"
+            placeholder="Cuéntanos qué objetivo te gustaría trabajar"
+            rows={4}
+            required
+            minLength={10}
+          />
+          <button className="button yellow" type="submit">Enviar solicitud</button>
+          
+        </form>
+
+      </section>
+
+      <footer className="footer">
+        <p>© 2026 Nutrición Efectiva. Todos los derechos reservados.</p>
+        <div>
+          <a href={instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </footer>
+        {mensajeEnviado && (
+          <div className="successToast">
+            ✅ ¡Gracias! Hemos recibido tu solicitud y nos pondremos en contacto contigo muy pronto.
+          </div>
+        )}
+      <a
+        className="whatsappFloat"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        💬 WhatsApp
+      </a>
+      
+    </main>
+    
+  );
+}
