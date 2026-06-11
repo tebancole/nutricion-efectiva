@@ -113,7 +113,7 @@ useEffect(() => {
           <input
             type="hidden"
             name="_next"
-            value="http://localhost:3000/?enviado=true"
+            value="https://nutricion-efectiva.vercel.app/?enviado=true"
           />
 
           <input
