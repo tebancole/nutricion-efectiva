@@ -115,13 +115,71 @@ useEffect(() => {
       </section>
 
       <section id="sobre-mi" className="section about">
-        <div>
-          <p className="eyebrow">Sobre Francella</p>
-          <h2>Una guía cercana para mejorar tu salud desde la alimentación</h2>
+        <div className="aboutContent">
+          <div>
+            <p className="eyebrow">Sobre Francella</p>
+
+            <h2>
+              Nutrición con cercanía, evidencia y acompañamiento real.
+            </h2>
+
+            <p className="aboutText">
+              Creo firmemente que la nutrición debe adaptarse a las personas
+              y no al revés. Mi objetivo es acompañarte a construir hábitos
+              sostenibles, mejorar tu relación con la comida y alcanzar tus
+              metas desde un enfoque humano, práctico y basado en evidencia.
+            </p>
+
+            <p className="aboutText">
+              Más que una dieta, busco brindarte herramientas para que
+              desarrolles una relación saludable con la alimentación que
+              puedas mantener a lo largo de tu vida.
+            </p>
+          </div>
+
+          <div className="credentialsCard">
+            <h3>Lic. Francella Rojas Castro</h3>
+
+            <p className="credentialNumber">
+              Nutricionista colegiada · CPN 2169-16
+            </p>
+
+            <ul className="credentialsList">
+              <li>🎓 Licenciatura en Nutrición.</li>
+              <li>🥗 Consulta privada desde 2016.</li>
+              <li>📏 Evaluación antropométrica.</li>
+              <li>🏃 Certificación en entrenamiento funcional.</li>
+              <li>🧠 Formación en neuronutrición infantil.</li>
+              <li>🎤 Experiencia en ferias y educación en salud.</li>
+            </ul>
+          </div>
         </div>
-        <p>
-          En Nutrición Efectiva, cada plan se adapta a tu rutina, gustos y necesidades. La meta es que logres cambios sostenibles, disfrutes el proceso y tengas herramientas para cuidar tu salud a largo plazo.
-        </p>
+
+        <div className="highlightsGrid">
+          <div className="highlightCard">
+            <span>🎓</span>
+            <h3>Formación profesional</h3>
+            <p>Licenciada en Nutrición por la Universidad de San José.</p>
+          </div>
+
+          <div className="highlightCard">
+            <span>🧠</span>
+            <h3>Formación continua</h3>
+            <p>Capacitación en neuronutrición infantil y actualización constante.</p>
+          </div>
+
+          <div className="highlightCard">
+            <span>🏃</span>
+            <h3>Enfoque integral</h3>
+            <p>Certificación en entrenamiento funcional para complementar tus objetivos.</p>
+          </div>
+
+          <div className="highlightCard">
+            <span>❤️</span>
+            <h3>Hábitos sostenibles</h3>
+            <p>Planes adaptados a tu realidad, sin dietas extremas.</p>
+          </div>
+        </div>
       </section>
 
       <section id="agenda" className="section booking">
