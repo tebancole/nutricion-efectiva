@@ -62,7 +62,7 @@ useEffect(() => {
       <header className="header">
         <a className="brand" href="#inicio" aria-label="Nutrición Efectiva inicio">
           <Image
-            src="/images/logo.jpg"
+            src="/images/logo.png"
             alt="Logo Nutrición Efectiva"
             width={180}
             height={90}
