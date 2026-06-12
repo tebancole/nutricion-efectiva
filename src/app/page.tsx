@@ -159,7 +159,7 @@ useEffect(() => {
           <div className="highlightCard">
             <span>🎓</span>
             <h3>Formación profesional</h3>
-            <p>Licenciada en Nutrición por la Universidad de San José.</p>
+            <p>Maestría en sobrepeso y obesidad.</p>
           </div>
 
           <div className="highlightCard">
